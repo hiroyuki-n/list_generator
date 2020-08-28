@@ -1,0 +1,138 @@
+@charset "utf-8";
+// ================================
+// カラー
+// ================================
+$color_white: #fafafa;
+$color_black: #333;
+// ================================
+// ブレイクポイント
+// ================================
+$bp_XXL: 1600px;
+$bp_XL: 1024px;
+$bp_L: 768px;
+$bp_M: 640px;
+$bp_S: 420px;
+$bp_XS: 320px;
+// @media only screen and (max-width: $bp_S) { }
+
+// ================================
+// テキスト選択時の文字色・背景色
+// ================================
+::selection {
+    background: $color_black;
+    color: $color_white;
+}
+//Firefox
+::-moz-selection {
+    background: $color_black;
+    color: $color_white;
+}
+// ================================
+// リセット
+// ================================
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+p {
+    margin-bottom: 1em;
+}
+button {
+    min-width: 120px;
+    min-height: 35px;
+    font-size: 14px;
+    line-height: 1;
+    border: solid 1px $color_black;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    &.btn_b {
+        color: $color_white;
+        background: $color_black;
+    }
+    &.btn_w {
+        color: $color_black;
+        background: $color_white;
+    }
+}
+textarea {
+    width: 100%;
+    height: 300px;
+
+    color: $color_black;
+    background: $color_white;
+    border: solid 1px $color_black;
+    border-radius: 5px;
+    font-size: 15px;
+    padding: 0.6em;
+    outline: none;
+    resize: vertical;
+}
+// ================================
+// ベース
+// ================================
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+body {
+    color: $color_black;
+    background: $color_white;
+    font-family: "Noto Sans JP", sans-serif;
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+    font-feature-settings: "palt";
+    a {
+        color: $color_black;
+        text-decoration: none;
+        transition: 0.3s;
+        &:link,
+        &:hover,
+        &:active,
+        &:focus {
+            color: $color_black;
+        }
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+}
+h1 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    @media only screen and (max-width: $bp_S) {
+        flex-direction: column;
+    }
+
+    .input,
+    .output {
+        flex: auto;
+        @media only screen and (max-width: $bp_S) {
+            width: 100%;
+        }
+    }
+    ul {
+        padding: 10px;
+        li {
+            margin-bottom: 10px;
+        }
+    }
+}
